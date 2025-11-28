@@ -75,7 +75,7 @@ async def distribute(context: ContextTypes.DEFAULT_TYPE):
         text = (
             "Добрый день! И он действительно добрый, потому что сегодня мы провели жеребьёвку, по итогам которой вам достался подопечный ☃️: {name}\n\n"
             "Вот информация о вашем подопечном:\n"
-            "Телеграм: @{username} (id: {tid})\n"
+            "Телеграм: @{username}\n"
             "Группа: {group}\n"
             "Комната: {room}\n"
             "Пожелания: {wishes}"
@@ -89,7 +89,6 @@ async def distribute(context: ContextTypes.DEFAULT_TYPE):
             name=receiver.get("full_name") or
                  f"{receiver.get('first_name', '')} {receiver.get('last_name', '')}",
             username=receiver.get("username") or "-",
-            tid=receiver.get("tg_id"),
             group=receiver.get("group") or "-",
             room=receiver.get("room") or "-",
             wishes=receiver.get("wishes") or "не указаны",
