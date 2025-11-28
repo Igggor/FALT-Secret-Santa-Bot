@@ -223,6 +223,6 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "Обмен подарками состоится 20-го декабря в рамках Новогоднего ЧГК!"
         )
         
-        await update.message.reply_text("Регистрация отменена.")
+        await update.message.reply_text(text=text)
     return ConversationHandler.END
 

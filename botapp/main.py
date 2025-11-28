@@ -58,13 +58,14 @@ def main():
             ],
         },
         fallbacks=[CommandHandler("cancel", handlers.cancel)],
-        fallbacks=[CommandHandler("help", handlers.help)],
     )
 
     app.add_handler(conv_handler)
 
     # Команда ручного распределения
     app.add_handler(CommandHandler("distribute_now", admin.distribute_command))
+
+    app.add_handler(CommandHandler("help", handlers.help))
 
     # Логгер всех сообщений (не мешает работе ConversationHandler, т.к. group=1)
     app.add_handler(MessageHandler(filters.ALL, handlers.message_logger), group=1)
