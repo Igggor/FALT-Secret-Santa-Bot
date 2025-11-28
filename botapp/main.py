@@ -58,6 +58,7 @@ def main():
             ],
         },
         fallbacks=[CommandHandler("cancel", handlers.cancel)],
+        fallbacks=[CommandHandler("help", handlers.help)],
     )
 
     app.add_handler(conv_handler)
